@@ -24,3 +24,7 @@ The recommended stack for the project is
 ## Contribution Guidelines
 * Read the [guidelines](./CONTRIBUTORS.md) before starting contributing or creating the project.
 * Follow the given [PR template](./PULL_REQUEST_TEMPLATE.md) to contribute to the project.
+
+## Gitter Community 
+
+[Learn'em all](https://gitter.im/iosdofficial/Learn-Em-All-ISOC19)
