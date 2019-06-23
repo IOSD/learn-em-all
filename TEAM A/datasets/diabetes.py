@@ -20,7 +20,6 @@ def load_data(split=False,ratio=None,path='./data/diabetes.csv'): ## generalized
 
     Returns:
     ======================================
-    Returns a Dict. which contains:
 
     1) X : A 2-D numpy array representing our Dataset, with each row corresponding to a new entry 
            and each column corresponding to diffrent features
@@ -48,27 +47,18 @@ def load_data(split=False,ratio=None,path='./data/diabetes.csv'): ## generalized
     ## load in the data
     data = np.genfromtxt(path,delimiter=',')
     X,y = data[:,:-1],data[:,-1] ## set in our X and y variables
-    diabetes_dict = {}  ## the dict which will be returned
 
 
     if not split:
-        diabetes_dict['X'] = X
-        diabetes_dict['y'] = y
+        return X,y
         
     else:
         X_train,X_test,y_train,y_test = train_test_split(X,y,train_size=ratio,random_state=0,shuffle=True)
-        diabetes_dict['X_train'],diabetes_dict['X_test'],diabetes_dict['y_train'],diabetes_dict['y_test'] = X_train,X_test,y_train,y_test
+        return  X_train,X_test,y_train,y_test
 
-    diabetes_dict['class_names'] = None
-    diabetes_dict['features'] = ['age', 'sex', 'bmi', 'bp', 's1', 's2', 's3', 's4', 's5', 's6']
-    return diabetes_dict
+def features():
+    return ['age', 'sex', 'bmi', 'bp', 's1', 's2', 's3', 's4', 's5', 's6']
 
+def class_names():
+    return None
 
-
-
-if __name__ == '__main__':
-    data = load_data(split=True,ratio=0.7,path = '../data/diabetes.csv')
-    print(data.keys())
-    X_train = data['X_train']
-    print(type(X_train),X_train.shape)
-    print(X_train)

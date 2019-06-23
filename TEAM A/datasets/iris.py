@@ -48,27 +48,19 @@ def load_data(split=False,ratio=None,path='./data/iris.csv'): ## generalized fun
     ## load in the data
     data = np.genfromtxt(path,delimiter=',')
     X,y = data[:,:-1],data[:,-1] ## set in our X and y variables
-    iris_dict = {}  ## the dict which will be returned
 
 
     if not split:
-        iris_dict['X'] = X
-        iris_dict['y'] = y
-        
+        return X,y
+
     else:
         X_train,X_test,y_train,y_test = train_test_split(X,y,train_size=ratio,random_state=0,shuffle=True,stratify=y)
-        iris_dict['X_train'],iris_dict['X_test'],iris_dict['y_train'],iris_dict['y_test'] = X_train,X_test,y_train,y_test
-
-    iris_dict['class_names'] = ['Iris-setosa','Iris-versicolor','Iris-virginica']
-    iris_dict['features'] = ['Sepal Length', 'Sepal Width', 'Petal Length' , 'Petal Width']
-    return iris_dict
+        return X_train,X_test,y_train,y_test
 
 
+def class_names():
+    return  ['Iris-setosa','Iris-versicolor','Iris-virginica']
 
 
-if __name__ == '__main__':
-    data = load_data(split=True,ratio=0.7,path = '../data/iris.csv')
-    print(data.keys())
-    X_train = data['X_train']
-    print(type(X_train),X_train.shape)
-    print(X_train)
+def features():
+    return ['Sepal Length', 'Sepal Width', 'Petal Length' , 'Petal Width']
