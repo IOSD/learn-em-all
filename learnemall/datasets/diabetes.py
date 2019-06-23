@@ -4,8 +4,7 @@ import numpy as np
 import pathlib
 from sklearn.model_selection import train_test_split
 
-
-def load_data(split=False,ratio=None,path='./data/iris.csv'): ## generalized function to load data
+def load_data(split=False,ratio=None,path='./data/diabetes.csv'): ## generalized function to load data
     """
     Loads in data from ./data/dataset.csv
 
@@ -20,7 +19,6 @@ def load_data(split=False,ratio=None,path='./data/iris.csv'): ## generalized fun
 
     Returns:
     ======================================
-    Returns a Dict. which contains:
 
     1) X : A 2-D numpy array representing our Dataset, with each row corresponding to a new entry 
            and each column corresponding to diffrent features
@@ -52,15 +50,13 @@ def load_data(split=False,ratio=None,path='./data/iris.csv'): ## generalized fun
 
     if not split:
         return X,y
-
+        
     else:
-        X_train,X_test,y_train,y_test = train_test_split(X,y,train_size=ratio,random_state=0,shuffle=True,stratify=y)
-        return X_train,X_test,y_train,y_test
-
-
-def class_names():
-    return  ['Iris-setosa','Iris-versicolor','Iris-virginica']
-
+        X_train,X_test,y_train,y_test = train_test_split(X,y,train_size=ratio,random_state=0,shuffle=True)
+        return  X_train,X_test,y_train,y_test
 
 def features():
-    return ['Sepal Length', 'Sepal Width', 'Petal Length' , 'Petal Width']
+    return ['age', 'sex', 'bmi', 'bp', 's1', 's2', 's3', 's4', 's5', 's6']
+
+def class_names():
+    return None

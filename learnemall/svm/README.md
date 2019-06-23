@@ -1,0 +1,3 @@
+#### Algorithms:
+
+- Linear SVM

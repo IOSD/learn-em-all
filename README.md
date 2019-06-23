@@ -13,13 +13,18 @@
     * Decision Tree Classifier
     * K-nearest neighbor Classifier
     * Random Forest Classifier
-    * Linear Regression and K-means clustering
+    * Linear Regression 
+    * Logistic Regression
+    * K-means clustering
 * Easily downloadable
 * Easily importable
 
 ## Stack
 The recommended stack for the project is
-* Machine Learning with Python
+* Python 3
+* Numpy
+* Pandas
+* Matplotlib
 
 ## Contribution Guidelines
 * Read the [guidelines](./CONTRIBUTORS.md) before starting contributing or creating the project.
