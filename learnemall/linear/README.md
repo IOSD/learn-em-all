@@ -1,4 +1,4 @@
 #### Algorithms:
 
-- Linear Regression
-- Logistic Regression
+- LinearRegression
+- LogisticRegression
