@@ -1,6 +1,6 @@
 # Learn 'Em All
 
-**Learn 'Em All** is a machine learning framework (python library) with basic support for ML algorithms 
+**Learn 'Em All** is a machine learning framework (python library) with basic support for ML algorithms.
 
 ## Table of Contents
 * [Features of Framework](#features-of-framework)
